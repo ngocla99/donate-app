@@ -1,0 +1,285 @@
+{
+  "app": {
+    "name": "Buddhist Donation"
+  },
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "announcements": "Announcements",
+    "admin": "Admin",
+    "about": "About Us"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "settings": "Settings",
+    "welcome": "Welcome",
+    "welcomeBack": "Welcome Back",
+    "loginToAccount": "Login to your account to track donations and receive updates",
+    "joinCommunity": "Join The Community",
+    "createAccount": "Create a new account to get started",
+    "email": "Email",
+    "password": "Password",
+    "fullName": "Full Name",
+    "forgotPassword": "Forgot password?",
+    "myAccount": "My Account",
+    "loggingIn": "Signing in...",
+    "termsAgreement": "By creating an account, you agree to our",
+    "termsOfService": "Terms of Service",
+    "and": "and",
+    "privacyPolicy": "Privacy Policy",
+    "creatingAccount": "Creating account...",
+    "createAccountButton": "Create Account"
+  },
+  "common": {
+    "guest": "Guest",
+    "loading": "Loading...",
+    "notFound": "Announcement not found",
+    "backToHome": "Back to home",
+    "unexpectedError": "An unexpected error occurred"
+  },
+  "language": {
+    "english": "English",
+    "vietnamese": "Vietnamese"
+  },
+
+  "home": {
+    "heroTitle": "Support Buddhist Communities Through Mindful Giving",
+    "heroSubtitle": "Your contributions help maintain temples, support monks and nuns, and fund community programs.",
+    "donateNow": "Donate",
+    "learnMore": "Learn More",
+    "joinCommunity": "Join The Community",
+    "joinDescription": "Create an account to track your donations, receive updates, and connect with everyone."
+  },
+
+  "footer": {
+    "supportText": "Support the Buddhist community through mindful giving and compassionate action.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "address1": "Hanoi",
+    "address2": "Vietnam",
+    "email": "Email: ngoc.leanh1999@gmail.com",
+    "phone": "Phone: 0975 471 213",
+    "copyright": "All rights reserved."
+  },
+
+  "announcements": {
+    "title": "Announcements",
+    "description": "Latest updates and information from the community",
+    "event": "Event",
+    "update": "Update",
+    "donation": "Donation",
+    "community": "Community",
+    "howToContribute": "How to Contribute",
+    "contributionInstructions": "You can contribute to support the monks in Myanmar by making a donation through our secure payment system or by bank transfer. Every contribution helps sustain their practice and living conditions.",
+
+    "items": {
+      "myanmar_donation": {
+        "title": "Donation for Myanmar Monks",
+        "content": "Every contribution is valuable, helping to support the practice life of over 150 monks who are practicing in Myanmar.",
+        "date": "June 1, 2024",
+        "detail": {
+          "heading": "Mahāvihāra Dhamma School Gwa Branch",
+          "introduction": "Deep in the forest near Myanmar's border area, there is a little-known branch of the Mahāvihāra Dhamma School – Mahāvihāra Forest Monastery (Gwa). This is where over 150 monks are diligently studying and practicing day and night in a simple, peaceful life filled with the spirit of purity.",
+          "lifestyle": {
+            "title": "The Simple Lifestyle of the Monks",
+            "description": "Located far from Yangon center, access to this school is quite difficult, with most monks having to use boats to leave the area. Life here reflects contentment and frugality, maintaining a pure spirit of study and practice:",
+            "points": [
+              "Food: Mainly vegetarian food, monks eat simply according to tradition.",
+              "Robes: The Sangha does not use pre-made robes but cuts and sews them from coarse white fabric, then dyes them with tree bark according to the traditional robe-making method.",
+              "Living conditions: Monks live in bamboo kutis, studying under solar-powered lights or candles when necessary.",
+              "Utensils: Most are made from natural materials, such as gourds for drinking water, bamboo for shelving, and hollowed wood for containers."
+            ]
+          },
+          "principal": {
+            "title": "Venerable Kawidaza – Principal of Mahāvihāra Gwa",
+            "description": "The principal of Mahāvihāra Gwa is Venerable Kawidaza, a dedicated teacher who guides the Sangha in studying according to the original teachings. Notably, in April 2024, he and 12 Sayadaws visited Vietnam, bringing compassion and Dhamma to Vietnamese Buddhists."
+          },
+          "access": {
+            "title": "Difficulties Accessing Mahāvihāra Gwa",
+            "description": "The area where the school is located is in a civil conflict zone and is strictly controlled, so even Myanmar people from other areas cannot freely access it. For foreigners, coming here is even more difficult. Despite requests, the monks here cannot receive visitors to ensure safety and maintain a pure environment."
+          },
+          "contact": {
+            "title": "Contact the Kappiya Supporting the Sangha",
+            "description": "To support and connect with Mahāvihāra Gwa, Buddhists can contact Kappiya Thet Tun Than Htay, who is supporting the Sangha in Yangon.",
+            "info": "Contact information:",
+            "details": ["Phone & Viber: +95 130 466", "Kpay: +95 130 466", "Facebook: Thet Tun Than Htay"],
+            "note": "Note: As the Kappiya has personal work outside, responses may be delayed. Please message in English or ask a Myanmar person to contact for the best support."
+          },
+          "conclusion": "Mahāvihāra Gwa is one of the Buddhist schools hidden in the deep forest, where monks diligently study and practice the precepts day and night. Though little known, it is a dignified place, embodying a pure lifestyle and the spirit of mindful retreat. If Buddhists wish to support, please contact Kappiya Thet Tun Than Htay for more details.",
+          "closing": "Sadhu! Sadhu! Sadhu!"
+        }
+      },
+      "meditation_retreat": {
+        "title": "Meditation Retreat Registration",
+        "content": "More information will be updated later.",
+        "date": "January 1, 2025"
+      },
+      "dharma_talks": {
+        "title": "Dharma Talk Series",
+        "content": "More information will be updated later.",
+        "date": "January 1, 2025"
+      }
+    }
+  },
+
+  "stats": {
+    "overview": "Quick Overview",
+    "totalDonations": "Total Donations",
+    "lifetimeContributions": "Lifetime contributions",
+    "recentActivity": "Recent Activity",
+    "newDonationsThisWeek": "New donations this week",
+    "donors": "Donors",
+    "communityMembers": "Community members",
+    "annualGoal": "Annual Goal",
+    "of": "of"
+  },
+
+  "bankTransactions": "Bank Transactions",
+  "date": "Date",
+  "documentNumber": "Document Number",
+  "debit": "Debit",
+  "credit": "Credit",
+  "balance": "Balance",
+  "description": "Description",
+
+  "search": "Search transactions",
+  "filterByDate": "Filter by date",
+  "noFilter": "No filter",
+  "filterByMonth": "Filter by month",
+  "filterByYear": "Filter by year",
+  "filterByRange": "Filter by date range",
+  "selectMonth": "Select month",
+  "selectYear": "Select year",
+  "dateRange": "Date range",
+  "selectDateRange": "Select date range",
+  "clearFilters": "Clear filters",
+
+  "month": "Month",
+  "year": "Year",
+
+  "columnVisibility": "Column visibility",
+  "noData": "No transaction data available yet.",
+  "noResults": "No results.",
+
+  "showing": "Showing",
+  "to": "to",
+  "of": "of",
+  "page": "Page",
+
+  "firstPage": "First page",
+  "previousPage": "Previous page",
+  "nextPage": "Next page",
+  "lastPage": "Last page",
+  "itemsPerPage": "Items per page",
+
+  "dashboard": {
+    "title": "Statement",
+    "welcome": "Welcome",
+    "personalDashboard": "Your personal donation dashboard",
+    "description": "View your donation history and manage your account settings here.",
+    "recentDonations": "Recent Donations",
+    "recentActivity": "Your recent donation activity",
+    "noDonations": "You haven't made any donations yet.",
+    "reminderSettings": "Reminder Settings",
+    "reminderDescription": "Configure your donation reminders",
+    "reminderConfig": "Set up how often you would like to receive donation reminders."
+  },
+
+  "admin": {
+    "title": "Admin Dashboard",
+    "welcome": "Admin Control Panel",
+    "description": "Manage users, transactions, and system settings",
+    "welcomeBack": "Welcome back",
+    "bankStatementUploadTab": "Bank Statement Upload",
+    "excelUploadTitle": "Excel Upload",
+    "excelUploadDescription": "Upload bank statement files for processing",
+    "uploadData": "Upload Data",
+    "manageUsers": "Manage Users",
+    "manageTransactions": "Manage Transactions",
+    "settings": "System Settings",
+    "statistics": "Statistics Overview",
+
+    "upload": {
+      "title": "Upload Transaction Data",
+      "description": "Upload bank statements in Excel format",
+      "dragAndDrop": "Drag and drop files here, or click to select",
+      "selectFile": "Click to select Excel file",
+      "uploadButton": "Upload File",
+      "processing": "Processing...",
+      "success": "File processed successfully",
+      "error": "Error processing file. Please try again.",
+      "preview": "Data Preview",
+      "confirm": "Confirm Import",
+      "cancel": "Cancel",
+      "instructions": "Please ensure your Excel file follows the required format. The first row should contain headers matching the expected column names.",
+      "downloadTemplate": "Download Template",
+      "remove": "Remove",
+      "processFile": "Process File",
+      "processAnotherFile": "Process Another File",
+      "bankStatementFormatGuidelines": "Bank Statement Format Guidelines",
+      "fileMustContainBankTransactionDetailsInStandardFormat": "File must contain bank transaction details in standard format",
+      "requiredColumns": "Required columns: STT, Date, Document number, Debit, Credit, Balance, Description",
+      "maximumFileSize": "Maximum file size: 10MB",
+      "supportedFormats": "Supported formats: Excel (.xlsx, .xls)"
+    },
+
+    "users": {
+      "title": "User Management",
+      "totalUsers": "Total Users",
+      "activeUsers": "Active Users",
+      "addUser": "Add User",
+      "editUser": "Edit User",
+      "deleteUser": "Delete User",
+      "name": "Name",
+      "email": "Email",
+      "role": "Role",
+      "status": "Status",
+      "lastLogin": "Last Login",
+      "actions": "Actions",
+      "confirmDelete": "Are you sure you want to delete this user?",
+      "userAdded": "User added successfully",
+      "userUpdated": "User updated successfully",
+      "userDeleted": "User deleted successfully"
+    }
+  },
+
+  "transactions": {
+    "title": "Bank Transactions",
+    "bankTransactions": "Bank Transactions",
+    "id": "ID",
+    "date": "Date",
+    "docNumber": "Document Number",
+    "debit": "Debit",
+    "credit": "Credit",
+    "balance": "Balance",
+    "description": "Description",
+    "actions": "Actions",
+    "noTransactions": "No transactions found",
+    "search": "Search transactions...",
+    "filter": "Filter",
+    "clearFilters": "Clear Filters",
+    "columnVisibility": "Column Visibility",
+    "itemsSelected": "items selected",
+    "processSelected": "Process Selected",
+    "bulkProcessing": "Processing...",
+    "processing": "Processing...",
+    "showing": "Showing",
+    "of": "of",
+    "entries": "entries",
+    "page": "Page",
+    "itemsPerPage": "Items per page",
+    "all": "All",
+    "selectAll": "Select all",
+    "deselectAll": "Deselect all",
+    "selectPage": "Select page",
+    "deselectPage": "Deselect page",
+    "confirmProcess": "Are you sure you want to process these transactions?",
+    "processSuccess": "Transactions processed successfully",
+    "processError": "Error processing transactions",
+    "selected": "Selected",
+    "transactions": "transactions",
+    "select": "Select row"
+  }
+}

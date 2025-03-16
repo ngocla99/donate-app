@@ -1,5 +1,5 @@
 import React from "react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useTranslation } from "react-i18next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { ArrowUpCircle, Users, DollarSign, Target } from "lucide-react";
@@ -19,7 +19,7 @@ const QuickStats = ({
   goalProgress = 68,
   goalAmount = 200000,
 }: QuickStatsProps) => {
-  const { t } = useLanguage();
+  const { t } = useTranslation();
   return (
     <div className="w-full max-w-[1200px] mx-auto bg-white p-6 rounded-lg shadow-sm">
       <h2 className="text-2xl font-semibold text-gray-800 mb-4">

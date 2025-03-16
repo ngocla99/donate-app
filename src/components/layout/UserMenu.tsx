@@ -1,5 +1,5 @@
 import { useAuth } from "@/contexts/AuthContext";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -15,7 +15,7 @@ import { useToast } from "@/components/ui/use-toast";
 
 const UserMenu = () => {
   const { user, profile, signOut } = useAuth();
-  const { t } = useLanguage();
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -31,30 +31,27 @@ const UserMenu = () => {
   if (!user) return null;
 
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
-        <Button
-          variant="outline"
-          className="border-amber-500 text-amber-700 hover:bg-amber-100"
-        >
-          <User className="mr-2 h-4 w-4" />
+        <Button variant='outline' className='border-amber-500 text-amber-700 hover:bg-amber-100'>
+          <User className='mr-2 h-4 w-4' />
           {profile?.name || user.email}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-56">
+      <DropdownMenuContent align='end' className='w-56'>
         <DropdownMenuLabel>{t("auth.myAccount")}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => navigate("/dashboard")}>
-          <User className="mr-2 h-4 w-4" />
+          <User className='mr-2 h-4 w-4' />
           {t("nav.dashboard")}
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => navigate("/settings")}>
-          <Settings className="mr-2 h-4 w-4" />
-          Cài Đặt
+        <DropdownMenuItem onClick={() => {}}>
+          <Settings className='mr-2 h-4 w-4' />
+          {t("auth.settings")}
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={handleSignOut}>
-          <LogOut className="mr-2 h-4 w-4" />
+          <LogOut className='mr-2 h-4 w-4' />
           {t("auth.logout")}
         </DropdownMenuItem>
       </DropdownMenuContent>

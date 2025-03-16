@@ -1,55 +1,57 @@
 import { Suspense } from "react";
-import { useRoutes, Routes, Route } from "react-router-dom";
-import Home from "./components/home";
-import LoginPage from "./components/auth/LoginPage";
-import RegisterPage from "./components/auth/RegisterPage";
-import Dashboard from "./components/dashboard/Dashboard";
-import { AuthProvider } from "./contexts/AuthContext";
-import { LanguageProvider } from "./contexts/LanguageContext";
-import { Toaster } from "./components/ui/toaster";
-import routes from "tempo-routes";
-import ProtectedRoute from "./components/auth/ProtectedRoute";
+import { Route, Routes } from "react-router-dom";
+import Admin from "./pages/admin";
+import AnnouncementDetail from "./pages/announcements/AnnouncementDetail";
+import AdminRoute from "./components/auth/AdminRoute";
+import Login from "./pages/auth/Login";
 import RedirectIfAuthenticated from "./components/auth/RedirectIfAuthenticated";
+import Register from "./pages/auth/Register";
+import Dashboard from "./pages/dashboard";
+import Home from "./pages/home";
+import AppLayout from "./components/layout/AppLayout";
+import { Toaster } from "./components/ui/toaster";
+import { AuthProvider } from "./contexts/AuthContext";
 
 function App() {
   return (
-    <LanguageProvider>
-      <AuthProvider>
-        <Suspense fallback={<p>Loading...</p>}>
-          <>
-            {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}
-            <Routes>
-              <Route path="/" element={<Home />} />
+    <AuthProvider>
+      <Suspense fallback={<p>Loading...</p>}>
+        <>
+          <Routes>
+            <Route element={<AppLayout />}>
+              <Route path='/' element={<Home />} />
               <Route
-                path="/login"
+                path='/login'
                 element={
                   <RedirectIfAuthenticated>
-                    <LoginPage />
+                    <Login />
                   </RedirectIfAuthenticated>
                 }
               />
               <Route
-                path="/register"
+                path='/register'
                 element={
                   <RedirectIfAuthenticated>
-                    <RegisterPage />
+                    <Register />
                   </RedirectIfAuthenticated>
                 }
               />
+              <Route path='/dashboard' element={<Dashboard />} />
               <Route
-                path="/dashboard"
+                path='/admin'
                 element={
-                  <ProtectedRoute>
-                    <Dashboard />
-                  </ProtectedRoute>
+                  <AdminRoute>
+                    <Admin />
+                  </AdminRoute>
                 }
               />
-            </Routes>
-            <Toaster />
-          </>
-        </Suspense>
-      </AuthProvider>
-    </LanguageProvider>
+              <Route path='/announcements/:slug' element={<AnnouncementDetail />} />
+            </Route>
+          </Routes>
+          <Toaster />
+        </>
+      </Suspense>
+    </AuthProvider>
   );
 }
 

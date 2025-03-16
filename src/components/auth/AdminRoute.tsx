@@ -2,16 +2,13 @@ import { useAuth } from "@/contexts/AuthContext";
 import { Navigate } from "react-router-dom";
 import { Skeleton } from "@/components/ui/skeleton";
 
-interface RedirectIfAuthenticatedProps {
+interface AdminRouteProps {
   children: React.ReactNode;
   redirectTo?: string;
 }
 
-const RedirectIfAuthenticated = ({
-  children,
-  redirectTo = "/dashboard",
-}: RedirectIfAuthenticatedProps) => {
-  const { user, isLoading } = useAuth();
+const AdminRoute = ({ children, redirectTo = "/dashboard" }: AdminRouteProps) => {
+  const { isAdmin, isLoading } = useAuth();
 
   if (isLoading) {
     return (
@@ -25,11 +22,11 @@ const RedirectIfAuthenticated = ({
     );
   }
 
-  if (user) {
+  if (!isAdmin) {
     return <Navigate to={redirectTo} />;
   }
 
   return <>{children}</>;
 };
 
-export default RedirectIfAuthenticated;
+export default AdminRoute;

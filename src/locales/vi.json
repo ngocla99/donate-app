@@ -1,0 +1,284 @@
+{
+  "app": {
+    "name": "Cúng dường Tam Bảo"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "dashboard": "Thống kê",
+    "announcements": "Thông báo",
+    "admin": "Quản trị",
+    "about": "Về Chúng Tôi"
+  },
+  "auth": {
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "logout": "Đăng xuất",
+    "settings": "Cài đặt",
+    "welcome": "Chào mừng",
+    "welcomeBack": "Chào mừng trở lại",
+    "loginToAccount": "Đăng nhập để theo dõi cúng dường và nhận thông báo",
+    "joinCommunity": "Tham gia cộng đồng",
+    "createAccount": "Tạo tài khoản mới để bắt đầu",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "fullName": "Họ và tên",
+    "forgotPassword": "Quên mật khẩu?",
+    "myAccount": "Tài khoản của tôi",
+    "loggingIn": "Đang đăng nhập...",
+    "termsAgreement": "Bằng cách tạo tài khoản, bạn đồng ý với",
+    "termsOfService": "Điều khoản dịch vụ",
+    "and": "và",
+    "privacyPolicy": "Chính sách bảo mật",
+    "creatingAccount": "Đang tạo tài khoản...",
+    "createAccountButton": "Tạo tài khoản"
+  },
+  "common": {
+    "guest": "Khách",
+    "loading": "Đang tải...",
+    "notFound": "Không tìm thấy thông báo",
+    "backToHome": "Trở về trang chủ",
+    "unexpectedError": "Đã xảy ra lỗi không mong muốn"
+  },
+  "language": {
+    "english": "English",
+    "vietnamese": "Tiếng Việt"
+  },
+
+  "home": {
+    "heroTitle": "Hỗ Trợ Cộng Đồng Phật Giáo Thông Qua Việc Cúng Dường Có Chánh Niệm",
+    "heroSubtitle": "Sự đóng góp giúp duy trì chùa chiền, hỗ trợ tăng ni và tài trợ cho các chương trình cộng đồng.",
+    "donateNow": "Cúng Dường",
+    "learnMore": "Tìm Hiểu Thêm",
+    "joinCommunity": "Tham Gia Cộng Đồng",
+    "joinDescription": "Tạo tài khoản để theo dõi các khoản đóng góp, nhận thông tin cập nhật và kết nối với mọi người."
+  },
+
+  "footer": {
+    "supportText": "Hỗ trợ cộng đồng Phật giáo thông qua sự cho đi chánh niệm và hành động từ bi.",
+    "quickLinks": "Liên Kết Nhanh",
+    "contact": "Liên Hệ",
+    "address1": "Thành phố Hà Nội",
+    "address2": "Việt Nam",
+    "email": "Email: ngoc.leanh1999@gmail.com",
+    "phone": "Điện thoại: 0975 471 213",
+    "copyright": "Đã đăng ký Bản quyền."
+  },
+
+  "announcements": {
+    "title": "Thông Báo",
+    "description": "Cập nhật và thông tin mới nhất từ cộng đồng",
+    "event": "Sự kiện",
+    "update": "Cập nhật",
+    "donation": "Cúng Dường",
+    "community": "Cộng đồng",
+    "howToContribute": "Cách Đóng Góp",
+    "contributionInstructions": "Bạn có thể đóng góp để hỗ trợ các nhà sư ở Myanmar bằng cách cúng dường thông qua hệ thống thanh toán an toàn của chúng tôi hoặc chuyển khoản ngân hàng. Mỗi đóng góp đều giúp duy trì tu tập và điều kiện sống của họ.",
+
+    "items": {
+      "myanmar_donation": {
+        "title": "Cúng dường Chư Tăng Myanmar",
+        "content": "Mọi đóng góp đều quý giá, giúp hộ độ đời sống tu tập của hơn 150 Chư Tăng đang hành trì tại Myanmar.",
+        "date": "01 Tháng 6, 2024",
+        "detail": {
+          "heading": "Trường Pháp Học Mahāvihāra Chi Nhánh Gwa",
+          "introduction": "Giữa rừng sâu gần khu vực biên giới Myanmar, có một chi nhánh ít người biết đến của Trường Pháp học Mahāvihāra – Mahāvihāra Forest Monastery (Gwa). Đây là nơi hơn 150 chư Tăng đang ngày đêm miệt mài tu học trong nếp sống giản dị, an tịnh và đầy tinh thần phạm hạnh.",
+          "lifestyle": {
+            "title": "Nếp Sống Giản Dị Của Chư Tăng",
+            "description": "Vì nằm xa trung tâm Yangon, việc tiếp cận ngôi trường này khá khó khăn, phần lớn chư Tăng phải dùng thuyền để ra khỏi khu vực. Cuộc sống nơi đây phản ánh sự tri túc – thiểu dục, giữ gìn tinh thần tu học thanh tịnh:",
+            "points": [
+              "Vật thực: Chủ yếu là thực phẩm chay, chư Tăng thọ thực đơn giản theo truyền thống.",
+              "Y phục: Tăng đoàn không sử dụng y may sẵn mà tự cắt, khâu từ vải trắng thô, sau đó nhuộm bằng vỏ cây theo đúng pháp y cổ truyền.",
+              "Sinh hoạt: Chư Tăng sống trong những kuti tre, học tập dưới ánh đèn năng lượng mặt trời hoặc đốt nến khi cần thiết.",
+              "Dụng cụ sinh hoạt: Hầu hết đều được làm từ thiên nhiên, như trái bầu hồ lô để đựng nước uống, tre để dựng kệ bàn, thân gỗ được đục để làm vật chứa."
+            ]
+          },
+          "principal": {
+            "title": "Ngài Kawidaza – Hiệu Trưởng Mahāvihāra Gwa",
+            "description": "Vị hiệu trưởng của Mahāvihāra Gwa là Ngài Kawidaza, một bậc giáo thọ sư tận tâm, dẫn dắt Tăng đoàn tu học theo giáo pháp nguyên thủy. Đặc biệt, vào tháng 4/2024, Ngài cùng 12 vị Sayadaw đã có chuyến viếng thăm Việt Nam, mang theo lòng từ bi và giáo pháp đến với Phật tử Việt."
+          },
+          "access": {
+            "title": "Khó Khăn Khi Tiếp Cận Mahāvihāra Gwa",
+            "description": "Khu vực nơi ngôi trường tọa lạc nằm trong vùng nội chiến và bị kiểm soát chặt chẽ, nên ngay cả người dân Myanmar từ các khu vực khác cũng không thể tự do tiếp cận. Đối với người nước ngoài, việc đến đây lại càng khó khăn hơn. Mặc dù đã có những lời thỉnh cầu, nhưng chư Tăng tại đây không thể tiếp nhận khách viếng thăm để đảm bảo sự an toàn và duy trì môi trường thanh tịnh."
+          },
+          "contact": {
+            "title": "Liên Hệ Kappiya Hộ Độ Tăng Đoàn",
+            "description": "Để hỗ trợ và kết nối với Mahāvihāra Gwa, Phật tử có thể liên hệ với Kappiya Thet Tun Than Htay, người đang hộ độ cho Tăng đoàn tại Yangon.",
+            "info": "Thông tin liên hệ:",
+            "details": ["Số điện thoại & Viber: +95 130 466", "Kpay: +95 130 466", "Facebook: Thet Tun Than Htay"],
+            "note": "Lưu ý: Vì Kappiya có công việc cá nhân bên ngoài nên có thể phản hồi chậm trễ. Phật tử vui lòng nhắn tin bằng tiếng Anh hoặc nhờ người Myanmar liên hệ giúp để được hỗ trợ tốt nhất."
+          },
+          "conclusion": "Mahāvihāra Gwa là một trong những ngôi trường Phật học ẩn mình giữa rừng sâu, nơi chư Tăng ngày đêm tinh tấn tu học và hành trì giới luật. Dù ít người biết đến, nhưng đây là một nơi chốn trang nghiêm, thể hiện nếp sống phạm hạnh và tinh thần an cư chánh niệm. Nếu quý Phật tử có lòng phát tâm hộ trì, xin hãy liên hệ với Kappiya Thet Tun Than Htay để biết thêm chi tiết.",
+          "closing": "Sadhu! Sadhu! Sadhu!"
+        }
+      },
+      "meditation_retreat": {
+        "title": "Mở Đăng Ký Khóa Tu Thiền",
+        "content": "Sẽ cập nhật thêm thông tin sau.",
+        "date": "01 Tháng 1, 2025"
+      },
+      "dharma_talks": {
+        "title": "Chuỗi Pháp Thoại",
+        "content": "Sẽ cập nhật thêm thông tin sau.",
+        "date": "01 Tháng 1, 2025"
+      }
+    }
+  },
+
+  "stats": {
+    "overview": "Tổng Quan Nhanh",
+    "totalDonations": "Tổng Cúng Dường",
+    "lifetimeContributions": "Đóng góp trọn đời",
+    "recentActivity": "Hoạt Động Gần Đây",
+    "newDonationsThisWeek": "Cúng dường mới trong tuần này",
+    "donors": "Nhà Hảo Tâm",
+    "communityMembers": "Thành viên cộng đồng",
+    "annualGoal": "Mục Tiêu Năm",
+    "of": "của"
+  },
+
+  "bankTransactions": "Giao dịch ngân hàng",
+  "date": "Ngày",
+  "documentNumber": "Số chứng từ",
+  "debit": "Số tiền chi",
+  "credit": "Số tiền nhận",
+  "balance": "Số dư",
+  "description": "Mô tả",
+
+  "search": "Tìm kiếm giao dịch",
+  "filterByDate": "Lọc theo thời gian",
+  "noFilter": "Không lọc",
+  "filterByMonth": "Lọc theo tháng",
+  "filterByYear": "Lọc theo năm",
+  "filterByRange": "Lọc theo khoảng thời gian",
+  "selectMonth": "Chọn tháng",
+  "selectYear": "Chọn năm",
+  "dateRange": "Khoảng thời gian",
+  "selectDateRange": "Chọn khoảng ngày",
+  "clearFilters": "Xóa bộ lọc",
+
+  "month": "Tháng",
+  "year": "Năm",
+
+  "columnVisibility": "Hiển thị cột",
+  "noData": "Chưa có dữ liệu giao dịch nào.",
+  "noResults": "Không có kết quả.",
+
+  "showing": "Hiển thị",
+  "to": "đến",
+  "of": "của",
+  "transactions": {
+    "title": "Giao Dịch Ngân Hàng",
+    "bankTransactions": "Giao Dịch Ngân Hàng",
+    "id": "ID",
+    "date": "Ngày",
+    "docNumber": "Số Chứng Từ",
+    "debit": "Ghi Nợ",
+    "credit": "Ghi Có",
+    "balance": "Số Dư",
+    "description": "Mô Tả",
+    "actions": "Thao Tác",
+    "noTransactions": "Không tìm thấy giao dịch nào",
+    "search": "Tìm kiếm giao dịch...",
+    "filter": "Bộ Lọc",
+    "clearFilters": "Xóa Bộ Lọc",
+    "columnVisibility": "Hiển Thị Cột",
+    "itemsSelected": "mục đã chọn",
+    "processSelected": "Xử Lý Mục Đã Chọn",
+    "bulkProcessing": "Đang xử lý...",
+    "processing": "Đang xử lý...",
+    "showing": "Hiển thị",
+    "of": "trong số",
+    "entries": "mục",
+    "page": "Trang",
+    "itemsPerPage": "Mục mỗi trang",
+    "all": "Tất cả",
+    "selectAll": "Chọn tất cả",
+    "deselectAll": "Bỏ chọn tất cả",
+    "selectPage": "Chọn trang này",
+    "deselectPage": "Bỏ chọn trang này",
+    "confirmProcess": "Bạn có chắc chắn muốn xử lý các giao dịch này không?",
+    "processSuccess": "Xử lý giao dịch thành công",
+    "processError": "Lỗi khi xử lý giao dịch",
+    "selected": "Đã chọn",
+    "transactions": "giao dịch",
+    "select": "Chọn dòng"
+  },
+
+  "page": "Trang",
+
+  "firstPage": "Trang đầu",
+  "previousPage": "Trang trước",
+  "nextPage": "Trang sau",
+  "lastPage": "Trang cuối",
+
+  "dashboard": {
+    "title": "Sao Kê",
+    "welcome": "Xin chào",
+    "personalDashboard": "Bảng điều khiển cúng dường cá nhân của bạn",
+    "description": "Xem lịch sử cúng dường và quản lý cài đặt tài khoản của bạn tại đây.",
+    "recentDonations": "Cúng Dường Gần Đây",
+    "recentActivity": "Hoạt động cúng dường gần đây của bạn",
+    "noDonations": "Bạn chưa thực hiện cúng dường nào.",
+    "reminderSettings": "Cài Đặt Nhắc Nhở",
+    "reminderDescription": "Cấu hình nhắc nhở cúng dường của bạn",
+    "reminderConfig": "Thiết lập tần suất bạn muốn nhận các nhắc nhở cúng dường."
+  },
+
+  "admin": {
+    "title": "Quản Trị Hệ Thống",
+    "welcome": "Bảng Điều Khiển Quản Trị",
+    "description": "Quản lý người dùng, giao dịch và cài đặt hệ thống",
+    "welcomeBack": "Chào mừng trở lại",
+    "bankStatementUploadTab": "Tải Lên Sao Kê Ngân Hàng",
+    "excelUploadTitle": "Tải Lên Excel",
+    "excelUploadDescription": "Tải lên tệp sao kê ngân hàng để xử lý",
+    "uploadData": "Tải Lên Dữ Liệu",
+    "manageUsers": "Quản Lý Người Dùng",
+    "manageTransactions": "Quản Lý Giao Dịch",
+    "settings": "Cài Đặt Hệ Thống",
+    "statistics": "Tổng Quan Thống Kê",
+
+    "upload": {
+      "title": "Tải Lên Dữ Liệu Giao Dịch",
+      "description": "Tải lên sao kê ngân hàng dưới định dạng Excel",
+      "dragAndDrop": "Kéo và thả tệp vào đây, hoặc nhấp để chọn",
+      "selectFile": "Nhấp để chọn tệp Excel",
+      "uploadButton": "Tải Lên Tệp",
+      "processing": "Đang xử lý...",
+      "success": "Đã xử lý tệp thành công",
+      "error": "Lỗi khi xử lý tệp. Vui lòng thử lại.",
+      "preview": "Xem Trước Dữ Liệu",
+      "confirm": "Xác Nhận Nhập",
+      "cancel": "Hủy",
+      "instructions": "Vui lòng đảm bảo tệp Excel của bạn tuân theo định dạng yêu cầu. Hàng đầu tiên nên chứa tiêu đề khớp với tên cột dự kiến.",
+      "downloadTemplate": "Tải Xuống Mẫu",
+      "remove": "Xóa",
+      "processFile": "Xử Lý Tệp",
+      "processAnotherFile": "Xử Lý Tệp Khác",
+      "bankStatementFormatGuidelines": "Hướng Dẫn Định Dạng Sao Kê Ngân Hàng",
+      "fileMustContainBankTransactionDetailsInStandardFormat": "Tệp phải chứa chi tiết giao dịch ngân hàng ở định dạng chuẩn",
+      "requiredColumns": "Các cột bắt buộc: STT, Ngày, Số chứng từ, Ghi nợ, Ghi có, Số dư, Mô tả",
+      "maximumFileSize": "Kích thước tệp tối đa: 10MB",
+      "supportedFormats": "Định dạng được hỗ trợ: Excel (.xlsx, .xls)"
+    },
+
+    "users": {
+      "title": "Quản Lý Người Dùng",
+      "totalUsers": "Tổng Số Người Dùng",
+      "activeUsers": "Người Dùng Hoạt Động",
+      "addUser": "Thêm Người Dùng",
+      "editUser": "Sửa Người Dùng",
+      "deleteUser": "Xóa Người Dùng",
+      "name": "Tên",
+      "email": "Email",
+      "role": "Vai Trò",
+      "status": "Trạng Thái",
+      "lastLogin": "Đăng Nhập Cuối",
+      "actions": "Hành Động",
+      "confirmDelete": "Bạn có chắc chắn muốn xóa người dùng này không?",
+      "userAdded": "Thêm người dùng thành công",
+      "userUpdated": "Cập nhật người dùng thành công",
+      "userDeleted": "Xóa người dùng thành công"
+    }
+  }
+}
