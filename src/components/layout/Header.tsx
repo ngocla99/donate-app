@@ -20,14 +20,17 @@ const Header = () => {
   };
 
   const handleLoginClick = () => {
+    setMobileMenuOpen(false);
     navigate("/login");
   };
 
   const handleRegisterClick = () => {
+    setMobileMenuOpen(false);
     navigate("/register");
   };
 
   const handleLogout = async () => {
+    setMobileMenuOpen(false);
     await signOut();
     navigate("/");
   };
@@ -101,11 +104,23 @@ const Header = () => {
       {mobileMenuOpen && (
         <div className='md:hidden bg-amber-50 border-t border-amber-100 py-4'>
           <div className='container mx-auto px-4 flex flex-col space-y-4'>
-            <Link to='/' className='text-amber-700 hover:text-amber-900 flex items-center py-2'>
+            <Link
+              to='/'
+              className='text-amber-700 hover:text-amber-900 flex items-center py-2'
+              onClick={() => {
+                setMobileMenuOpen(false);
+              }}
+            >
               <Home className='mr-2 h-4 w-4' />
               <span>{t("nav.home")}</span>
             </Link>
-            <Link to='/dashboard' className='text-amber-700 hover:text-amber-900 flex items-center py-2'>
+            <Link
+              to='/dashboard'
+              className='text-amber-700 hover:text-amber-900 flex items-center py-2'
+              onClick={() => {
+                setMobileMenuOpen(false);
+              }}
+            >
               <BarChart3 className='mr-2 h-4 w-4' />
               <span>{t("nav.dashboard")}</span>
             </Link>

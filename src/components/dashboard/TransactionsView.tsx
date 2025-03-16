@@ -14,6 +14,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { useToast } from "@/components/ui/use-toast";
+import useWindowSize from "@/hooks/useWindowSize";
 import { supabase } from "@/lib/supabase";
 import { cn, formatCurrency, formatDate } from "@/lib/utils";
 import {
@@ -121,6 +122,14 @@ const TransactionsView = () => {
     return options;
   }, []);
 
+  const headerNames = {
+    transaction_date: t("date"),
+    document_number: t("documentNumber"),
+    debit: t("debit"),
+    credit: t("credit"),
+    balance: t("balance"),
+  };
+
   // Define columns for TanStack Table
   const columns = useMemo<ColumnDef<BankTransaction>[]>(
     () => [
@@ -133,6 +142,7 @@ const TransactionsView = () => {
         accessorKey: "document_number",
         header: ({ column }) => <div className='text-center'>{t("documentNumber")}</div>,
         cell: ({ row }) => <div className='text-center'>{row.getValue("document_number")}</div>,
+        enableSorting: false,
       },
       {
         accessorKey: "debit",
@@ -160,6 +170,7 @@ const TransactionsView = () => {
           }
           return description;
         },
+        enableSorting: false,
       },
     ],
     [t]
@@ -313,15 +324,60 @@ const TransactionsView = () => {
     onPaginationChange: setPagination,
   });
 
+  const { screenWidth } = useWindowSize();
+  const [expandedRows, setExpandedRows] = useState({});
+
+  useEffect(() => {
+    if (screenWidth < 480) {
+      setColumnVisibility({
+        transaction_date: false,
+        document_number: false,
+        debit: false,
+        credit: false,
+        balance: false,
+        description: true,
+      });
+    } else if (screenWidth < 768) {
+      setColumnVisibility({
+        transaction_date: true,
+        document_number: false,
+        debit: false,
+        credit: true,
+        balance: false,
+        description: true,
+      });
+    } else {
+      setColumnVisibility({
+        transaction_date: true,
+        document_number: false,
+        debit: true,
+        credit: true,
+        balance: true,
+        description: true,
+      });
+    }
+  }, [screenWidth]);
+
+  const toggleRow = (rowId) => {
+    setExpandedRows((prev) => ({
+      ...prev,
+      [rowId]: !prev[rowId],
+    }));
+  };
+
+  const hasHiddenColumns = (row) => {
+    return screenWidth < 480;
+  };
+
   return (
     <div className='space-y-4'>
       <Card>
         <CardHeader>
           <CardTitle>{t("bankTransactions")}</CardTitle>
         </CardHeader>
-        <CardContent>
-          <div className='flex items-center justify-between mb-4 gap-2'>
-            <div className='relative flex-1 max-w-sm'>
+        <CardContent className='sm:px-6 px-0'>
+          <div className='flex sm:items-center justify-between mb-4 gap-2 flex-wrap sm:flex-row sm:px-0 px-2'>
+            <div className='relative flex-1 min-w-80 max-w-xl'>
               <Search className='absolute left-2 top-2.5 h-4 w-4 text-gray-500' />
               <Input
                 placeholder={t("search")}
@@ -331,124 +387,124 @@ const TransactionsView = () => {
               />
             </div>
 
-            {/* Date filter dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant='outline'>
-                  <Calendar className='mr-2 h-4 w-4' />
-                  {dateFilterType === "none" && t("filterByDate")}
-                  {dateFilterType === "month" &&
-                    `${t("month")}: ${format(
-                      new Date(`${selectedMonth.split("-")[1]}-${selectedMonth.split("-")[0]}-01`),
-                      "MM/yyyy"
-                    )}`}
-                  {dateFilterType === "year" && `${t("year")}: ${selectedYear}`}
-                  {dateFilterType === "range" &&
-                    (dateRange.from
-                      ? `${format(dateRange.from, "dd/MM/yyyy")} - ${
-                          dateRange.to ? format(dateRange.to, "dd/MM/yyyy") : ""
-                        }`
-                      : t("selectDateRange"))}
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align='end' className='w-56'>
-                <DropdownMenuItem onClick={() => setDateFilterType("month")}>Lọc theo tháng</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setDateFilterType("year")}>Lọc theo năm</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setDateFilterType("range")}>
-                  Lọc theo khoảng thời gian
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem
-                  onClick={() => {
-                    setDateFilterType("none");
-                    resetDateFilters();
-                  }}
-                >
-                  <FilterX className='mr-2 h-4 w-4' />
-                  Xóa bộ lọc
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <div className='flex flex-1 gap-2 flex-wrap'>
+              {/* Date filter dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant='outline'
+                    className={cn("flex-1 sm:flex-initial", dateFilterType !== "none" && "w-40")}
+                  >
+                    <Calendar className='mr-2 h-4 w-4' />
+                    {dateFilterType === "none" && t("filterByDate")}
+                    {dateFilterType === "month" &&
+                      `${t("month")}: ${format(
+                        new Date(`${selectedMonth.split("-")[1]}-${selectedMonth.split("-")[0]}-01`),
+                        "MM/yyyy"
+                      )}`}
+                    {dateFilterType === "year" && `${t("year")}: ${selectedYear}`}
+                    {dateFilterType === "range" &&
+                      (dateRange.from
+                        ? `${formatDate(dateRange.from)} - ${dateRange.to ? formatDate(dateRange.to) : ""}`
+                        : t("selectDateRange"))}
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align='end' className='w-56'>
+                  <DropdownMenuItem onClick={() => setDateFilterType("month")}>{t("filterByMonth")}</DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setDateFilterType("year")}>{t("filterByYear")}</DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setDateFilterType("range")}>{t("filterByRange")}</DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem
+                    onClick={() => {
+                      setDateFilterType("none");
+                      resetDateFilters();
+                    }}
+                  >
+                    <FilterX className='mr-2 h-4 w-4' />
+                    {t("clearFilters")}
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
 
-            {/* Month selector (shown when month filter is active) */}
-            {dateFilterType === "month" && (
-              <Select value={selectedMonth} onValueChange={setSelectedMonth}>
-                <SelectTrigger className='w-[200px]'>
-                  <SelectValue placeholder='Chọn tháng' />
-                </SelectTrigger>
-                <SelectContent>
-                  {monthOptions.map((option) => (
-                    <SelectItem key={option.value} value={option.value}>
-                      {option.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            )}
+              {/* Month selector (shown when month filter is active) */}
+              {dateFilterType === "month" && (
+                <Select value={selectedMonth} onValueChange={setSelectedMonth}>
+                  <SelectTrigger className='w-[140px]'>
+                    <SelectValue placeholder={t("selectMonth")} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {monthOptions.map((option) => (
+                      <SelectItem key={option.value} value={option.value}>
+                        {option.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              )}
 
-            {/* Year selector (shown when year filter is active) */}
-            {dateFilterType === "year" && (
-              <Select value={selectedYear} onValueChange={setSelectedYear}>
-                <SelectTrigger className='w-[120px]'>
-                  <SelectValue placeholder='Chọn năm' />
-                </SelectTrigger>
-                <SelectContent>
-                  {yearOptions.map((option) => (
-                    <SelectItem key={option.value} value={option.value}>
-                      {option.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            )}
+              {/* Year selector (shown when year filter is active) */}
+              {dateFilterType === "year" && (
+                <Select value={selectedYear} onValueChange={setSelectedYear}>
+                  <SelectTrigger className='w-[120px]'>
+                    <SelectValue placeholder={t("selectYear")} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {yearOptions.map((option) => (
+                      <SelectItem key={option.value} value={option.value}>
+                        {option.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              )}
 
-            {/* Date range picker (shown when range filter is active) */}
-            {dateFilterType === "range" && (
-              <div className='grid gap-2'>
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <Button
-                      id='date'
-                      variant={"outline"}
-                      className={cn(
-                        "w-[300px] justify-start text-left font-normal",
-                        !dateRange.from && "text-muted-foreground"
-                      )}
-                    >
-                      <Calendar className='mr-2 h-4 w-4' />
-                      {dateRange.from ? (
-                        dateRange.to ? (
-                          <>
-                            {format(dateRange.from, "dd/MM/yyyy")} - {format(dateRange.to, "dd/MM/yyyy")}
-                          </>
+              {/* Date range picker (shown when range filter is active) */}
+              {dateFilterType === "range" && (
+                <div className='grid gap-2 flex-1'>
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <Button
+                        id='date'
+                        variant={"outline"}
+                        className={cn(
+                          "w-[216px] justify-start text-left font-normal",
+                          !dateRange.from && "text-muted-foreground"
+                        )}
+                      >
+                        <Calendar className='mr-2 h-4 w-4' />
+                        {dateRange.from ? (
+                          dateRange.to ? (
+                            <>
+                              {format(dateRange.from, "dd/MM/yyyy")} - {format(dateRange.to, "dd/MM/yyyy")}
+                            </>
+                          ) : (
+                            format(dateRange.from, "dd/MM/yyyy")
+                          )
                         ) : (
-                          format(dateRange.from, "dd/MM/yyyy")
-                        )
-                      ) : (
-                        t("selectDateRange")
-                      )}
-                    </Button>
-                  </PopoverTrigger>
-                  <PopoverContent className='w-auto p-0' align='start'>
-                    <CalendarComponent
-                      initialFocus
-                      mode='range'
-                      defaultMonth={dateRange.from}
-                      selected={dateRange}
-                      onSelect={setDateRange}
-                      numberOfMonths={2}
-                    />
-                  </PopoverContent>
-                </Popover>
-              </div>
-            )}
-
+                          t("selectDateRange")
+                        )}
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className='w-auto p-0' align='start'>
+                      <CalendarComponent
+                        initialFocus
+                        mode='range'
+                        defaultMonth={dateRange.from}
+                        selected={dateRange}
+                        onSelect={setDateRange}
+                        numberOfMonths={2}
+                      />
+                    </PopoverContent>
+                  </Popover>
+                </div>
+              )}
+            </div>
             {/* Column visibility dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant='outline' className='ml-auto'>
-                  <SlidersHorizontal className='mr-2 h-4 w-4' />
-                  {t("columnVisibility")}
+                <Button variant='outline' className='ml-auto hidden sm:flex'>
+                  <SlidersHorizontal className='h-4 w-4' />
+                  <span className='hidden sm:inline sm:ml-2'>{t("columnVisibility")}</span>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align='end' className='w-[200px]'>
@@ -488,6 +544,7 @@ const TransactionsView = () => {
                   <TableHeader>
                     {table.getHeaderGroups().map((headerGroup) => (
                       <TableRow key={headerGroup.id}>
+                        <TableHead></TableHead>
                         {headerGroup.headers.map((header) => (
                           <TableHead key={header.id}>
                             {header.isPlaceholder ? null : (
@@ -514,13 +571,46 @@ const TransactionsView = () => {
                   <TableBody>
                     {table.getRowModel().rows.length ? (
                       table.getRowModel().rows.map((row) => (
-                        <TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
-                          {row.getVisibleCells().map((cell) => (
-                            <TableCell key={cell.id} className='h-[57px]'>
-                              {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                        <>
+                          <TableRow
+                            key={row.id}
+                            data-state={row.getIsSelected() && "selected"}
+                            onClick={() => hasHiddenColumns(row) && toggleRow(row.id)}
+                          >
+                            <TableCell>
+                              {hasHiddenColumns(row) && (
+                                <button>
+                                  {expandedRows[row.id] ? (
+                                    <ChevronDown className='h-4 w-4' />
+                                  ) : (
+                                    <ChevronRight className='h-4 w-4' />
+                                  )}
+                                </button>
+                              )}
                             </TableCell>
-                          ))}
-                        </TableRow>
+                            {row.getVisibleCells().map((cell) => (
+                              <TableCell key={cell.id} className='h-[57px]'>
+                                {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                              </TableCell>
+                            ))}
+                          </TableRow>
+                          {expandedRows[row.id] && (
+                            <tr>
+                              <td></td>
+                              <td colSpan={row.getVisibleCells().length}>
+                                {row
+                                  .getAllCells()
+                                  .filter((cell) => !cell.column.getIsVisible())
+                                  .map((cell) => (
+                                    <div key={cell.id} className='flex justify-between p-2'>
+                                      <strong>{headerNames[cell.column.id as keyof typeof headerNames]}: </strong>
+                                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                    </div>
+                                  ))}
+                              </td>
+                            </tr>
+                          )}
+                        </>
                       ))
                     ) : (
                       <TableRow>
@@ -532,7 +622,7 @@ const TransactionsView = () => {
                   </TableBody>
                 </Table>
               </div>
-              <div className='flex items-center justify-between mt-4'>
+              <div className='flex-col gap-2 items-center justify-between mt-4 sm:flex-row flex'>
                 <div className='text-sm text-gray-500'>
                   {t("showing")} {pagination.pageIndex * pagination.pageSize + 1} {t("to")}{" "}
                   {Math.min((pagination.pageIndex + 1) * pagination.pageSize, totalCount)} {t("of")} {totalCount}{" "}
@@ -558,7 +648,7 @@ const TransactionsView = () => {
                     <ChevronLeft className='h-4 w-4' />
                   </Button>
                   <span className='text-sm px-2'>
-                    {t("page")}{" "}
+                    <span className='hidden sm:inline'>{t("page")} </span>
                     <strong>
                       {table.getState().pagination.pageIndex + 1} / {table.getPageCount()}
                     </strong>
