@@ -19,6 +19,7 @@ import {
 } from "@tanstack/react-table";
 import { format } from "date-fns";
 import { useTranslation } from "react-i18next";
+import { formatDate } from "@/lib/utils";
 
 export interface BankTransaction {
   id: number;
@@ -78,7 +79,7 @@ export const BankTransactionTable: React.FC<BankTransactionTableProps> = ({
       {
         accessorKey: "date",
         header: t("transactions.date"),
-        cell: ({ row }) => <div>{format(row.getValue("date"), "dd/MM/yyyy")}</div>,
+        cell: ({ row }) => <div>{formatDate(row.getValue("date"))}</div>,
       },
       {
         accessorKey: "docNumber",

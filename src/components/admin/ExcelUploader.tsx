@@ -2,12 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { useToast } from "@/components/ui/use-toast";
-import { parse } from "date-fns";
+import { formatISO, parse } from "date-fns";
 import { AlertCircle, ArrowDownToLine, CheckCircle, FileText, Upload } from "lucide-react";
 import React, { useState } from "react";
 import * as XLSX from "xlsx";
 import { BankTransaction } from "./BankTransactionTable";
 import { useTranslation } from "react-i18next";
+import { formatDate } from "@/lib/utils";
 
 interface ExcelUploaderProps {
   onTransactionsProcessed: (transactions: BankTransaction[]) => void;
@@ -177,12 +178,12 @@ export const ExcelUploader: React.FC<ExcelUploaderProps> = ({ onTransactionsProc
             const parsedDate = parse(rawDate, "dd/MM/yyyy", new Date());
             if (!isNaN(parsedDate.getTime())) {
               // Check if this date has appeared before
-              const baseDate = parsedDate.toISOString().split("T")[0];
+              const baseDate = formatDate(parsedDate);
               const occurrences = dateOccurrences.get(baseDate) || 0;
 
               // Add seconds based on occurrence count
               parsedDate.setSeconds(occurrences);
-              date = parsedDate.toISOString();
+              date = formatISO(parsedDate);
 
               // Update occurrence count
               dateOccurrences.set(baseDate, occurrences + 1);

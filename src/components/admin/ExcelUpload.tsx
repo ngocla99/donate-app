@@ -26,7 +26,7 @@ const ExcelUpload = () => {
       const supabaseData = transactions
         .filter((transaction) => selectedIds.includes(transaction.id))
         .map((transaction) => ({
-          transaction_date: new Date(transaction.date).toISOString(),
+          transaction_date: transaction.date,
           document_number: transaction.docNumber,
           debit: transaction.debit,
           credit: transaction.credit,
@@ -36,8 +36,8 @@ const ExcelUpload = () => {
         }));
 
       // Insert into database
-      const { error: insertError } = await supabase.from("bank_transactions").insert(supabaseData);
-      if (insertError) throw insertError;
+      // const { error: insertError } = await supabase.from("bank_transactions").insert(supabaseData);
+      // if (insertError) throw insertError;
 
       toast({
         title: t("admin.upload.success"),

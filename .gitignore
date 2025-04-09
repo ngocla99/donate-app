@@ -33,3 +33,4 @@ core
 .env.local
 .env.*.local
 
+.vercel

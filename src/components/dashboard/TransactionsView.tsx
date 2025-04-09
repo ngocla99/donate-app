@@ -62,6 +62,7 @@ type DateFilterType = "none" | "month" | "year" | "range";
 const TransactionsView = () => {
   const { t } = useTranslation();
   const [transactions, setTransactions] = useState<BankTransaction[]>([]);
+  console.log(transactions);
   const [isLoading, setIsLoading] = useState(true);
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
